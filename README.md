@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# E-Commerce Sales Chatbot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that simulates an e-commerce platform with a conversational sales chatbot. Users can register, log in, browse and filter products, and interact with an AI assistant for product queries.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+This project demonstrates a modern e-commerce experience powered by a chatbot interface. Users can:
+- Register and log in securely
+- Browse and filter a catalog of electronics products
+- Chat with a salesbot to get product recommendations and information
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The backend is built with Flask and SQLAlchemy, while the frontend uses React for a responsive, mobile-friendly UI.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+[User Browser]
+      |
+   [React Frontend]
+      |
+   [Flask REST API]
+      |
+   [SQLite Database]
+```
 
-### `npm run build`
+- **Frontend:** React SPA (Single Page Application)
+- **Backend:** Flask REST API
+- **Database:** SQLite (mock inventory, chat, and user data)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technology Choices
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Flask:** Lightweight, easy to set up REST API, great for rapid prototyping.
+- **SQLAlchemy:** ORM for clean, modular database access.
+- **React:** Component-based UI, excellent for responsive and interactive apps.
+- **SQLite:** Simple file-based DB, perfect for mock/demo projects.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Setup Instructions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend
+1. `cd backend`
+2. `pip install -r requirements.txt`
+3. `python seed_data.py`  &nbsp;_# Seeds the database with mock products_
+4. `python app.py`  &nbsp;_# Starts the Flask server on http://localhost:5000_
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend
+1. `cd frontend`
+2. `npm install`
+3. `npm start`  &nbsp;_# Starts React app on http://localhost:3000_
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Register or log in as a user.
+- Browse and filter products by name, category, or price.
+- Chat with the AI assistant for product help or recommendations.
+- Reset the chat session at any time.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `POST /register` - Register user
+- `POST /login` - Login user
+- `GET /products` - List/filter products
+- `POST /chat` - Chat with bot
+- `POST /chat/reset` - Reset chat
 
-### Analyzing the Bundle Size
+See [REPORT.md](./REPORT.md) for detailed API documentation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ ![Product List Screenshot](public/Products.png)
+ ![Chatbot Screenshot](public/Chat.png)
+ ![Chat History Screenshot](public/Chats.png)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Troubleshooting / FAQ
 
-### Deployment
+- **CORS errors:** Ensure both frontend (`npm start`) and backend (`python app.py`) are running on their default ports.
+- **Port conflicts:** If port 3000 (frontend) or 5000 (backend) is in use, stop other apps or change the port.
+- **Database not seeded:** Run `python seed_data.py` before starting the backend.
+- **API not reachable:** Check that Flask is running and accessible at `http://localhost:5000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT License
+
+---
+
+## Authors
+
+- Priyanka
+
+---
