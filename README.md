@@ -80,9 +80,9 @@ See [REPORT.md](./REPORT.md) for detailed API documentation.
 
 ## Screenshots
 
- ![Product List Screenshot](public/Products.png)
- ![Chatbot Screenshot](public/Chat.png)
- ![Chat History Screenshot](public/Chats.png)
+ ![Product List Screenshot](frontend/public/Products.png)
+ ![Chatbot Screenshot](frontend/public/chat.png)
+ ![Chat History Screenshot](frontend/public/chats.png)
 
 ---
 
